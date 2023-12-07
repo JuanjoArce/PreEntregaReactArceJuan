@@ -1,23 +1,21 @@
-import {useState, useEffect} from 'react'
-import {useParams} from 'react'
-import arrayProductos from '../Json/arrayProductos.json'
-import ItemList from '../ItemList/ItemList'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import arrayProductos from '../Json/arrayProductos.json';
+import ItemList from '../ItemList/ItemList';
 
+const ItemListContainer = ({ greeting }) => {
+  const [item, setItem] = useState([]);
+  const { id } = useParams();
 
-const ItemListContainer = ({greeting}) => {
-
-  const [item, setItem] = useState([])
-  const {id} = useParams();
-
-  useEffect(()=>{
-    const fetchData = async()=>{
-      try{
-        const data = await new Promise((resolve)=>{
-          setTimeout(()=>{
-            resolve( id ? arrayProductos.filter(item => item.categoria === id) : arrayProductos)
-        }, 2000);
-      });
-      setItem(data);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(id ? arrayProductos.filter((item) => item.categoria === id) : arrayProductos);
+          }, 2000);
+        });
+        setItem(data);
     }catch(error){
       console.log('Error:', error);
     }
