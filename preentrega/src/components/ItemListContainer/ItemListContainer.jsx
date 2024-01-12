@@ -13,7 +13,7 @@ const ItemListContainer = ({ greeting }) => {
         const data = await new Promise((resolve) => {
           setTimeout(() => {
             resolve(id ? arrayProductos.filter((item) => item.categoria === id) : arrayProductos);
-          }, 2000);
+          }, 1000);
         });
         setItem(data);
     }catch(error){
