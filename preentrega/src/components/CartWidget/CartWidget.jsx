@@ -1,10 +1,16 @@
-import React from 'react'
-import { FaShoppingCart } from "react-icons/fa";
+import { BsFillCartCheckFill } from 'react-icons/bs';
+import {useCartContext} from '../Context/CartContext';
+
 
 const CartWidget = () => {
+  const {totalProducts, cart} = useCartContext();
   return (
-    <button><FaShoppingCart /></button>
-  )
-}
+    <div className="container">
+     
+        <BsFillCartCheckFill />
+        
+    </div>
+  );
+};
 
-export default CartWidget
+export default CartWidget;

@@ -15,15 +15,19 @@ function NavBar() {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
-            <NavLink exact to="/" className="nav-link">
-              Home
-            </NavLink>
-            <NavLink to="/category/celulares" className="nav-link">Celulares</NavLink>
-            <NavLink to="/category/monitores" className="nav-link">Monitores</NavLink>
-            <NavLink to="/category/tablets" className="nav-link">Tablets</NavLink>
+            
+          <NavLink exact="true" to="/" className="nav-link">Home</NavLink>
+
+        <NavLink to="/category/celulares" className="nav-link">Celulares</NavLink>
+        <NavLink to="/category/monitores" className="nav-link">Monitores</NavLink>
+        <NavLink to="/category/tablets" className="nav-link">Tablets</NavLink>
+
+
           </Nav>
           <NavLink to="/cart" className="navbar-cart">
+          <button className="bi bi-cart">
             <CartWidget />
+            </button>
           </NavLink>
         </Navbar.Collapse>
       </Container>

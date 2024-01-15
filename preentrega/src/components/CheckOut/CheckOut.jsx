@@ -68,10 +68,12 @@ export const CheckOut = () =>{
         setError('Error en la orden');
       });
      })
+
      .catch((error)=>{
-      console.log('No se puede actualizar el stock', error);
-      setError('No se actualizo el stock');
-     });    
+      console.log('Error creating order:', error);
+      setError('Error en la orden');
+    });
+    
     
      setNombre('');
      setApellido('');
